@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JBF.iml" filepath="$PROJECT_DIR$/JBF.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jbf-core/jbf-core.iml" filepath="$PROJECT_DIR$/jbf-core/jbf-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jbf-datasource/jbf-datasource.iml" filepath="$PROJECT_DIR$/jbf-datasource/jbf-datasource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jbf-example/jbf-example.iml" filepath="$PROJECT_DIR$/jbf-example/jbf-example.iml" />
+    </modules>
+  </component>
+</project>
