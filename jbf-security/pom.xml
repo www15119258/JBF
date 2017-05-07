@@ -1,18 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.cangzhitao.jbf</groupId>
-    <artifactId>jbf-example</artifactId>
-    <packaging>war</packaging>
+    <artifactId>jbf-security</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>jbf-example Maven Webapp</name>
-    <url>http://cangzhitao.com</url>
+    <packaging>jar</packaging>
+
+    <name>jbf-security</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <junit.version>4.10</junit.version>
         <jbf.core.version>1.0-SNAPSHOT</jbf.core.version>
         <jbf.datasource.version>1.0-SNAPSHOT</jbf.datasource.version>
-        <jbf.security.version>1.0-SNAPSHOT</jbf.security.version>
     </properties>
 
     <dependencies>
@@ -28,15 +29,7 @@
             <artifactId>jbf-datasource</artifactId>
             <version>${jbf.datasource.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.cangzhitao.jbf</groupId>
-            <artifactId>jbf-security</artifactId>
-            <version>${jbf.security.version}</version>
-        </dependency>
 
 
     </dependencies>
-    <build>
-        <finalName>jbf-example</finalName>
-    </build>
 </project>

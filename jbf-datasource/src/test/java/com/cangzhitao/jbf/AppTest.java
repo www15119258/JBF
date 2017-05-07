@@ -1,4 +1,4 @@
-package com.cangzhita.jbf;
+package com.cangzhitao.jbf;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

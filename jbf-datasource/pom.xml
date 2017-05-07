@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cangzhita.jbf</groupId>
+    <groupId>com.cangzhitao.jbf</groupId>
     <artifactId>jbf-datasource</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -12,6 +12,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jbf.core.version>1.0-SNAPSHOT</jbf.core.version>
+        <mysql.version>5.1.40</mysql.version>
+        <druid.version>1.0.27</druid.version>
+        <mybatis.version>3.4.4</mybatis.version>
+        <pagehelper.version>4.2.1</pagehelper.version>
+        <spring.mybatis.version>1.3.1</spring.mybatis.version>
     </properties>
 
     <dependencies>
@@ -21,5 +27,43 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.cangzhitao.jbf</groupId>
+            <artifactId>jbf-core</artifactId>
+            <version>${jbf.core.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${spring.mybatis.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${pagehelper.version}</version>
+        </dependency>
+
+
     </dependencies>
 </project>

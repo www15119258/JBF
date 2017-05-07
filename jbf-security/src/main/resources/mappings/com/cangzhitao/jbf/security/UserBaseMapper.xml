@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cangzhitao.jbf.security.mapper.UserMapper">
+
+	<sql id="TABLE_NAME">
+		jbf_user
+	</sql>
+	<sql id="TABLE_ID">
+
+	</sql>
+	<sql id="TALBE_COLUMNS">
+		a.username as username,
+		a.password as password
+	</sql>
+
+	<select id="findAll" resultType="User">
+		SELECT <include refid="TALBE_COLUMNS"/> from <include refid="TABLE_NAME"/> a
+	</select>
+
+	<select id="find" resultType="User">
+		SELECT <include refid="TALBE_COLUMNS"/>
+		from <include refid="TABLE_NAME"/> a
+		<where>
+			1 = 1
+			<if test="username != null and username != ''">
+				AND a.username = #{username}
+			</if>
+			<if test="password != null and password != ''">
+				AND a.password = #{password}
+			</if>
+		</where>
+	</select>
+
+    <select id="findById" resultType="User">
+        SELECT <include refid="TALBE_COLUMNS"/>
+        from <include refid="TABLE_NAME"/> a
+        <where>
+            a.id = #{id}
+        </where>
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="User">
+        insert into <include refid="TABLE_NAME" /> (
+          username,
+          password
+        )
+        values (
+          #{username},
+          #{password}
+        )
+    </insert>
+
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="User">
+        insert into <include refid="TABLE_NAME" /> (
+        <foreach collection="fields" item="field" separator=",">
+            ${field}
+        </foreach>
+        )
+        values (
+        <foreach collection="props" item="prop" separator=",">
+            #{${prop}}
+        </foreach>
+        )
+    </insert>
+
+</mapper>

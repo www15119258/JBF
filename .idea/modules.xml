@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/jbf-core/jbf-core.iml" filepath="$PROJECT_DIR$/jbf-core/jbf-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/jbf-datasource/jbf-datasource.iml" filepath="$PROJECT_DIR$/jbf-datasource/jbf-datasource.iml" />
       <module fileurl="file://$PROJECT_DIR$/jbf-example/jbf-example.iml" filepath="$PROJECT_DIR$/jbf-example/jbf-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jbf-security/jbf-security.iml" filepath="$PROJECT_DIR$/jbf-security/jbf-security.iml" />
     </modules>
   </component>
 </project>

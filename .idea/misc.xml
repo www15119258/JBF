@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/JBF-Example/pom.xml" />
         <option value="$PROJECT_DIR$/jbf-core/pom.xml" />
         <option value="$PROJECT_DIR$/jbf-datasource/pom.xml" />
+        <option value="$PROJECT_DIR$/jbf-security/pom.xml" />
       </list>
     </option>
   </component>

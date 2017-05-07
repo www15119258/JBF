@@ -7,6 +7,12 @@
           <element id="module-output" name="jbf-example" />
         </element>
         <element id="directory" name="lib">
+          <element id="archive" name="jbf-datasource-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="jbf-datasource" />
+          </element>
+          <element id="archive" name="jbf-core-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="jbf-core" />
+          </element>
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:1.5.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter:1.5.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:1.5.3.RELEASE" />
@@ -32,11 +38,32 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.0" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.8" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.8.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:1.5.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jdbc:8.5.14" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:8.5.14" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-aop:1.5.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.10" />
+          <element id="library" level="project" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.0" />
+          <element id="library" level="project" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:1.3.0" />
+          <element id="library" level="project" name="Maven: org.htmlparser:htmlparser:2.1" />
+          <element id="library" level="project" name="Maven: org.htmlparser:htmllexer:2.1" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.40" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.27" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.4" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.3.1" />
+          <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper:4.2.1" />
+          <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:0.9.5" />
+          <element id="archive" name="jbf-security-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="jbf-security" />
+          </element>
         </element>
       </element>
       <element id="directory" name="META-INF">
