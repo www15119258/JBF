@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JBF.iml" filepath="$PROJECT_DIR$/JBF.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jbf-code-generator/jbf-code-generator.iml" filepath="$PROJECT_DIR$/jbf-code-generator/jbf-code-generator.iml" />
       <module fileurl="file://$PROJECT_DIR$/jbf-core/jbf-core.iml" filepath="$PROJECT_DIR$/jbf-core/jbf-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/jbf-datasource/jbf-datasource.iml" filepath="$PROJECT_DIR$/jbf-datasource/jbf-datasource.iml" />
       <module fileurl="file://$PROJECT_DIR$/jbf-example/jbf-example.iml" filepath="$PROJECT_DIR$/jbf-example/jbf-example.iml" />

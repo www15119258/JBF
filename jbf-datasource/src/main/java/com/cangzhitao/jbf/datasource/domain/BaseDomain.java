@@ -1,9 +1,11 @@
 package com.cangzhitao.jbf.datasource.domain;
 
+import com.cangzhitao.jbf.datasource.persistence.annotation.Column;
 import com.cangzhitao.jbf.datasource.persistence.annotation.ID;
 import com.cangzhitao.jbf.datasource.util.DomainUtil;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,6 +16,18 @@ public class BaseDomain {
     @ID
     private Long id;
 
+    @Column(name = "create_by")
+    private Long createBy;
+
+    @Column(name = "create_date")
+    private Date createDate;
+
+    @Column(name = "update_by")
+    private Long updateBy;
+
+    @Column(name = "update_date")
+    private Date updateDate;
+
     public Long getId() {
         return id;
     }
@@ -22,25 +36,42 @@ public class BaseDomain {
         this.id = id;
     }
 
-    public List<String> getFields() {
-        return DomainUtil.getFields(this.getClass());
+    public Long getCreateBy() {
+        return createBy;
     }
 
-    public List<String> getProps() {
-        return DomainUtil.getProps(this.getClass());
+    public void setCreateBy(Long createBy) {
+        this.createBy = createBy;
     }
 
-    public String getIdField() {
-        return DomainUtil.getIdField(this.getClass());
+    public Date getCreateDate() {
+        if(createDate==null) {
+            createDate = new Date();
+        }
+        return createDate;
     }
 
-    public String getIdProp() {
-        return DomainUtil.getIdProp(this.getClass());
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
+    public Long getUpdateBy() {
+        return updateBy;
+    }
 
+    public void setUpdateBy(Long updateBy) {
+        this.updateBy = updateBy;
+    }
 
+    public Date getUpdateDate() {
+        if(updateDate==null) {
+            updateDate = new Date();
+        }
+        return updateDate;
+    }
 
-
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
+    }
 
 }

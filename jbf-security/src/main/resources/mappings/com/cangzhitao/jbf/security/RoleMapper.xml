@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cangzhitao.jbf.security.mapper.RoleMapper">
+
+
+    <select id="findAll2" resultType="Role" >
+        SELECT
+        <foreach collection="__field_list__" item="field" separator=",">
+            ${field.field}
+        </foreach>
+        from ${__table_name__} a
+    </select>
+
+    <select id="find2" resultType="User" >
+        SELECT * from jbf_user a
+    </select>
+</mapper>

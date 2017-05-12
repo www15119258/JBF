@@ -3,6 +3,7 @@ package com.cangzhitao.jbf.datasource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import com.cangzhitao.jbf.core.util.PropertiesUtil;
 import com.cangzhitao.jbf.datasource.annotation.MyBatisMapper;
+import com.cangzhitao.jbf.datasource.interceptor.BaseMapperInterceptor;
 import com.github.pagehelper.PageHelper;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -10,7 +11,6 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -130,7 +130,8 @@ public class DataSourceConfiguration implements ApplicationContextAware, Environ
         properties.setProperty("pageSizeZero", "true");
         properties.setProperty("rowBoundsWithCount", "true");
         pageHelper.setProperties(properties);
-        sqlSessionFactoryBean.setPlugins(new Interceptor[]{pageHelper});
+        BaseMapperInterceptor baseMapperInterceptor = new BaseMapperInterceptor();
+        sqlSessionFactoryBean.setPlugins(new Interceptor[]{pageHelper, baseMapperInterceptor});
         return sqlSessionFactoryBean.getObject();
     }
 

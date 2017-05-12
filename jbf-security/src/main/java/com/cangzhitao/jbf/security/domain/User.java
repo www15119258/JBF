@@ -6,7 +6,7 @@ import com.cangzhitao.jbf.datasource.persistence.annotation.Table;
 /**
  * Created by lihui on 2017/5/6.
  */
-@Table
+@Table(name = "jbf_user")
 public class User extends BaseDomain {
 
     private String username;

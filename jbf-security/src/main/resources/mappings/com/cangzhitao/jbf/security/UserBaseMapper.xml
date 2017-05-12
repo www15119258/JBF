@@ -6,61 +6,149 @@
 		jbf_user
 	</sql>
 	<sql id="TABLE_ID">
-
+        id
 	</sql>
 	<sql id="TALBE_COLUMNS">
-		a.username as username,
-		a.password as password
+        id as id,
+        username as username,
+        password as password,
+        create_by as createBy,
+        create_date as createDate,
+        update_by as updateBy,
+        update_date as updateDate
 	</sql>
 
 	<select id="findAll" resultType="User">
-		SELECT <include refid="TALBE_COLUMNS"/> from <include refid="TABLE_NAME"/> a
+		SELECT <include refid="TALBE_COLUMNS"/>
+        FROM <include refid="TABLE_NAME"/> a
 	</select>
 
 	<select id="find" resultType="User">
 		SELECT <include refid="TALBE_COLUMNS"/>
-		from <include refid="TABLE_NAME"/> a
+		FROM <include refid="TABLE_NAME"/> a
 		<where>
 			1 = 1
-			<if test="username != null and username != ''">
-				AND a.username = #{username}
-			</if>
-			<if test="password != null and password != ''">
-				AND a.password = #{password}
-			</if>
+            <if test="username != null and username != ''">
+                AND a.username = #{username}
+            </if>
+            <if test="password != null and password != ''">
+                AND a.password = #{password}
+            </if>
 		</where>
 	</select>
 
     <select id="findById" resultType="User">
         SELECT <include refid="TALBE_COLUMNS"/>
-        from <include refid="TABLE_NAME"/> a
+        FROM <include refid="TABLE_NAME"/> a
         <where>
             a.id = #{id}
         </where>
     </select>
 
     <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="User">
-        insert into <include refid="TABLE_NAME" /> (
-          username,
-          password
+        INSERT INTO <include refid="TABLE_NAME" />
+        (
+            username,
+            password,
+            create_by,
+            create_date,
+            update_by,
+            update_date
         )
-        values (
-          #{username},
-          #{password}
+        VALUES
+        (
+            #{username},
+            #{password},
+            #{createBy},
+            #{createDate},
+            #{updateBy},
+            #{updateDate}
         )
     </insert>
 
-    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="User">
-        insert into <include refid="TABLE_NAME" /> (
-        <foreach collection="fields" item="field" separator=",">
-            ${field}
-        </foreach>
+    <insert id="insertBatch" useGeneratedKeys="true" keyProperty="id" parameterType="User">
+        INSERT INTO <include refid="TABLE_NAME" />
+        (
+            username,
+            password,
+            create_by,
+            create_date,
+            update_by,
+            update_date
         )
-        values (
-        <foreach collection="props" item="prop" separator=",">
-            #{${prop}}
-        </foreach>
+        VALUES
+        <foreach collection="list" item="item" index="index" separator="," >
+        (
+            #{item.username},
+            #{item.password},
+            #{item.createBy},
+            #{item.createDate},
+            #{item.updateBy},
+            #{item.updateDate}
         )
+        </foreach>
     </insert>
+
+    <update id="update">
+        UPDATE <include refid="TABLE_NAME" /> SET
+        username = #{username},
+        password = #{password},
+        update_by = #{updateBy},
+        update_date = #{updateDate}
+        WHERE id = #{id}
+    </update>
+
+    <update id="updateBatch">
+        UPDATE <include refid="TABLE_NAME" /> SET
+        username =
+        <foreach collection="list" item="item" index="index" separator=" " open="case id" close="end">
+            WHEN #{item.id} then #{item.username}
+        </foreach>
+        ,password =
+        <foreach collection="list" item="item" index="index" separator=" " open="case id" close="end">
+            WHEN #{item.id} then #{item.password}
+        </foreach>
+        ,update_by =
+        <foreach collection="list" item="item" index="index" separator=" " open="case id" close="end">
+            WHEN #{item.id} then #{item.updateBy}
+        </foreach>
+        ,update_date =
+        <foreach collection="list" item="item" index="index" separator=" " open="case id" close="end">
+            WHEN #{item.id} then #{item.updateDate}
+        </foreach>
+        WHERE id IN
+        <foreach collection="list" index="index" item="item" separator="," open="(" close=")">
+            #{item.id}
+        </foreach>
+    </update>
+
+    <update id="delete">
+        DELETE FROM <include refid="TABLE_NAME" />
+        <where>
+            1 = 1
+            <if test="id != null and id != ''">
+                AND a.id = #{id}
+            </if>
+            <if test="username != null and username != ''">
+                AND a.username = #{username}
+            </if>
+            <if test="password != null and password != ''">
+                AND a.password = #{password}
+            </if>
+        </where>
+    </update>
+
+    <update id="deleteById">
+        DELETE FROM <include refid="TABLE_NAME" />
+        WHERE id = #{id}
+    </update>
+
+    <update id="deleteByIdBatch">
+        DELETE FROM <include refid="TABLE_NAME" />
+        WHERE id in
+        <foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+            #{item}
+        </foreach>
+    </update>
 
 </mapper>

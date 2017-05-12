@@ -13,9 +13,8 @@ import java.util.Map;
  */
 @MyBatisMapper
 @DataSourceSelect(value = "default")
-public interface UserMapper extends BaseMapper<Long, User> {
+public interface RoleMapper extends BaseMapper {
 
-    public List<User> find2(String a , String b);
 
     public List<User> findAll2(Map<String, Object> map);
 
